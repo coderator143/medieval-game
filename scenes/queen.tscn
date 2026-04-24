@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c4cpxeo7nfmgi"]
+
+[ext_resource type="Texture2D" uid="uid://dk1hm72kh1fvl" path="res://assets/sprites/queen-idle3.png" id="1_h447w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ch0"]
+atlas = ExtResource("1_h447w")
+region = Rect2(0, 0, 89, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e14lb"]
+atlas = ExtResource("1_h447w")
+region = Rect2(89, 0, 89, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b865"]
+atlas = ExtResource("1_h447w")
+region = Rect2(178, 0, 89, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt6if"]
+atlas = ExtResource("1_h447w")
+region = Rect2(267, 0, 89, 122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frf55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ch0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e14lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b865")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt6if")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h447w"]
+distance = -21.975346
+
+[node name="Queen" type="CharacterBody2D" unique_id=247216918]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=772334444]
+sprite_frames = SubResource("SpriteFrames_frf55")
+frame_progress = 0.95602614
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1051441141]
+rotation = 0.004547243
+shape = SubResource("WorldBoundaryShape2D_h447w")
